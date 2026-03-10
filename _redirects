@@ -1,13 +1,10 @@
 # Netlify _redirects
 # Drop this file in the root of your project (same level as index.html)
-# Netlify reads it automatically on deploy
 
-# Redirect bare domain → www (canonical)
-https://joecoovermagic.com/*           https://www.joecoovermagic.com/:splat  301!
-
-# Redirect Netlify subdomain → custom domain (once DNS is live)
-https://joecoovermagic.netlify.app/*   https://www.joecoovermagic.com/:splat  301!
-
-# Optional: redirect /book → /contact.html (nice short URL for business cards/ads)
+# Short URL — nice for business cards / ads
 /book   /contact.html   301
 /book/  /contact.html   301
+
+# Uncomment these TWO lines once your custom domain DNS is live:
+# https://joecoovermagic.com/*  https://www.joecoovermagic.com/:splat  301!
+# https://joecoovermagic.netlify.app/*  https://www.joecoovermagic.com/:splat  301!
