@@ -346,7 +346,7 @@
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="contact.html?success=true"
+              
               class="contact-form"
               novalidate
             >
@@ -605,6 +605,42 @@
 
   <!-- Main JS -->
   <script src="js/main.js"></script>
+
+  <!-- Netlify Form — JS success handler (no redirect needed) -->
+  <script>
+    (function() {
+      var form = document.querySelector('.contact-form');
+      var success = document.querySelector('.form-success');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var submitBtn = form.querySelector('.btn-submit');
+        submitBtn.classList.add('loading');
+        submitBtn.textContent = 'Sending…';
+
+        var data = new FormData(form);
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        })
+        .then(function() {
+          form.style.display = 'none';
+          success.classList.add('show');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .catch(function(err) {
+          submitBtn.classList.remove('loading');
+          submitBtn.textContent = '🎩 Send My Inquiry';
+          alert('Something went wrong. Please call Joe directly at (405) 431-6625.');
+          console.error(err);
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
