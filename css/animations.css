@@ -1,0 +1,276 @@
+/* ═══════════════════════════════════════════════════════════════
+   JOE COOVER MAGIC — Animations
+   animations.css · Pure CSS keyframes & motion effects
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════
+   1. KEYFRAMES
+═══════════════════════════════════════ */
+
+/* Marquee scroll */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* VHS glitch — used on hero title on page load */
+@keyframes glitch {
+  0%, 100% {
+    clip-path: inset(0 0 100% 0);
+    transform: translate(0);
+  }
+  5%  { clip-path: inset(8% 0 58% 0);  transform: translate(-4px, 0); }
+  10% { clip-path: inset(35% 0 28% 0); transform: translate(4px, 0); }
+  15% { clip-path: inset(60% 0 5% 0);  transform: translate(-2px, 0); }
+  20% { clip-path: inset(0 0 100% 0);  transform: translate(0); }
+}
+
+/* Neon glow pulse on headlines */
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 45, 120, 0.55), 0 0 60px rgba(255, 45, 120, 0.2); }
+  50%       { text-shadow: 0 0 40px rgba(255, 45, 120, 0.9), 0 0 100px rgba(255, 45, 120, 0.45); }
+}
+
+@keyframes glow-pulse-cyan {
+  0%, 100% { text-shadow: 0 0 20px rgba(0, 245, 255, 0.55), 0 0 60px rgba(0, 245, 255, 0.2); }
+  50%       { text-shadow: 0 0 40px rgba(0, 245, 255, 0.9), 0 0 100px rgba(0, 245, 255, 0.45); }
+}
+
+/* Box glow pulse — for CTAs / bordered elements */
+@keyframes box-glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 45, 120, 0.45), 0 0 60px rgba(255, 45, 120, 0.15); }
+  50%       { box-shadow: 0 0 40px rgba(255, 45, 120, 0.8), 0 0 100px rgba(255, 45, 120, 0.35); }
+}
+
+/* Lightning bolt flicker — logo */
+@keyframes bolt-flicker {
+  0%, 90%, 100%  { opacity: 1; }
+  91%  { opacity: 0.25; }
+  92%  { opacity: 1; }
+  95%  { opacity: 0.5; }
+  96%  { opacity: 1; }
+}
+
+/* Gentle float — hero decorative bolt */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Fade up — section entry */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in — simple opacity */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scale in — badges, stats */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Scanline sweep — one-shot on page load */
+@keyframes scanline-sweep {
+  from { transform: translateY(-100%); opacity: 0.15; }
+  to   { transform: translateY(100vh);  opacity: 0; }
+}
+
+/* Horizontal neon scan line */
+@keyframes scan-h {
+  0%   { top: 0; opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ═══════════════════════════════════════
+   2. HERO ANIMATION SEQUENCE
+═══════════════════════════════════════ */
+
+/* Hero entry — staggered children */
+.hero-eyebrow  { animation: fade-up 0.7s 0.1s ease both; }
+.hero-title-1  { animation: fade-up 0.7s 0.25s ease both; }
+.hero-title-2  { animation: fade-up 0.7s 0.4s ease both; }
+.hero-title-3  { animation: fade-up 0.7s 0.55s ease both; }
+.hero-tagline  { animation: fade-up 0.7s 0.7s ease both; }
+.hero-ctas     { animation: fade-up 0.7s 0.85s ease both; }
+
+/* Glitch overlay — fires once on load, then idles */
+.glitch-layer {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  animation: glitch 0.4s 0.2s ease forwards, glitch 0.3s 0.65s ease forwards;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: screen;
+  opacity: 0.4;
+}
+
+/* Hero scan line sweep */
+.hero-scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 245, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: scan-h 2s 0.5s ease-out forwards;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Bolt logo */
+.bolt-anim { animation: bolt-flicker 5s 1s infinite; }
+.bolt-float { animation: float 5s ease-in-out infinite; }
+
+/* Pulsing CTA */
+.cta-pulse { animation: box-glow-pulse 2.5s ease-in-out infinite; }
+.headline-glow { animation: glow-pulse 3s ease-in-out infinite; }
+.headline-glow-cyan { animation: glow-pulse-cyan 3s ease-in-out infinite; }
+
+/* ═══════════════════════════════════════
+   3. SCROLL INDICATOR
+═══════════════════════════════════════ */
+@keyframes scroll-line {
+  0%   { height: 0; opacity: 1; }
+  70%  { height: 48px; opacity: 1; }
+  100% { height: 48px; opacity: 0; }
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.scroll-indicator span {
+  font-family: 'Audiowide', cursive;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  color: rgba(240, 240, 248, 0.4);
+  text-transform: uppercase;
+}
+.scroll-indicator-line {
+  width: 1px;
+  background: linear-gradient(to bottom, #FF2D78, transparent);
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   4. HOVER EFFECTS (CSS-only)
+═══════════════════════════════════════ */
+
+/* Neon border draw on hover */
+.hover-border {
+  position: relative;
+}
+.hover-border::before,
+.hover-border::after {
+  content: '';
+  position: absolute;
+  transition: 0.4s ease;
+}
+.hover-border::before {
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--magenta);
+}
+.hover-border::after {
+  bottom: 0; right: 0;
+  width: 0; height: 2px;
+  background: var(--cyan);
+}
+.hover-border:hover::before,
+.hover-border:hover::after {
+  width: 100%;
+}
+
+/* Image reveal on hover */
+.img-hover-zoom {
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: saturate(0.8) brightness(0.9);
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+  filter: saturate(1.1) brightness(1);
+}
+
+/* ═══════════════════════════════════════
+   5. PAGE TRANSITION
+═══════════════════════════════════════ */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-content {
+  animation: page-in 0.5s ease both;
+}
+
+/* ═══════════════════════════════════════
+   6. LOADING STATE
+═══════════════════════════════════════ */
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position:  400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--bg-card2) 25%,
+    var(--bg-card3) 50%,
+    var(--bg-card2) 75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* ═══════════════════════════════════════
+   7. REDUCED MOTION OVERRIDE
+   All animations must respect this.
+═══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+
+  /* Keep opacity reveals instant but visible */
+  .reveal      { opacity: 1; transform: none; }
+  .hero-eyebrow,
+  .hero-title-1,
+  .hero-title-2,
+  .hero-title-3,
+  .hero-tagline,
+  .hero-ctas   { animation: none; opacity: 1; transform: none; }
+
+  .glitch-layer    { display: none; }
+  .hero-scan-line  { display: none; }
+}
