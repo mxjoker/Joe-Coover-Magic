@@ -22,7 +22,7 @@
      ACTIVE NAV LINK — highlight current page
   ---------------------------------------------------------- */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(link => {
+  document.querySelectorAll('.nav-links a, .nav-drawer a').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
@@ -33,7 +33,7 @@
      MOBILE HAMBURGER MENU
   ---------------------------------------------------------- */
   const hamburger = document.querySelector('.nav-hamburger');
-  const mobileMenu = document.querySelector('.nav-mobile');
+  const mobileMenu = document.querySelector('.nav-drawer');
 
   if (hamburger && mobileMenu) {
     const toggleMenu = () => {
