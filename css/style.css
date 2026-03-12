@@ -777,3 +777,12 @@ input::placeholder, textarea::placeholder { color: var(--text-muted); }
   .reveal { opacity: 1; transform: none; }
   .marquee-track { animation: none; }
 }
+/* ── MOBILE GLOW REDUCTION ── */
+@media (max-width: 767px) {
+  :root {
+    --glow-text-mg: 0 0 6px rgba(255,45,120,0.5), 0 0 12px rgba(255,45,120,0.2);
+    --glow-text-cy: 0 0 6px rgba(0,245,255,0.5),  0 0 12px rgba(0,245,255,0.2);
+    --glow-magenta: 0 0 10px rgba(255,45,120,0.4), 0 0 20px rgba(255,45,120,0.15);
+    --glow-cyan:    0 0 10px rgba(0,245,255,0.4),  0 0 20px rgba(0,245,255,0.15);
+  }
+}
