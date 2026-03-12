@@ -243,10 +243,11 @@
     }
     .calendly-header p { color: var(--text-muted); font-size: 0.95rem; }
     .calendly-inline-widget {
-      min-height: 700px;
+      min-height: 900px;
+      height: 900px;
     }
     @media (min-width: 768px) {
-      .calendly-inline-widget { min-height: 750px; }
+      .calendly-inline-widget { min-height: 1000px; height: 1000px; }
     }
 
     /* Form submit button */
@@ -310,7 +311,7 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <nav class="nav-mobile" aria-label="Mobile navigation">
+  <div class="nav-drawer" role="navigation" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -320,7 +321,8 @@
     <div class="mobile-contact">
       <a href="tel:+14054316625">(405) 431-6625</a>
     </div>
-  </nav>
+  </div>
+
 
   <main>
 
