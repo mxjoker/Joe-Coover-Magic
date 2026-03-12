@@ -6,5 +6,5 @@
 /book/  /contact.html   301
 
 # Uncomment these TWO lines once your custom domain DNS is live:
-https://joecoovermagic.com/*  https://www.joecoovermagic.com/:splat  301!
-https://joecoovermagic.netlify.app/*  https://www.joecoovermagic.com/:splat  301!
+https://joecoovermagic.com/*  https://www.joecoover.com/:splat  301!
+https://joecoovermagic.netlify.app/*  https://www.joecoover.com/:splat  301!
