@@ -669,26 +669,33 @@
 </head>
 <body>
 
-  <!-- ── NAV ── -->
-  <nav class="nav" id="nav">
+  <!-- ═══ SHARED NAV ═══ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <span class="nav-logo-icon">🎩</span>
-        <span class="nav-logo-text">Joe Coover <em>Magic</em></span>
+      <a href="index.html" class="nav-logo" aria-label="Joe Coover Magic home">
+        <img class="nav-logo-img bolt-anim" src="assets/icons/bolt.png" alt="Lightning bolt logo" width="36" height="36">
+        <span class="nav-logo-wordmark">JOE COOVER <span>MAGIC</span></span>
       </a>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links" role="list">
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="media.html">Media</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html" class="nav-cta">Book Joe</a></li>
       </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta-desktop">BOOK JOE</a>
+      <button class="nav-hamburger" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" role="navigation" aria-label="Mobile navigation">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="media.html">Media</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html" class="btn btn-primary">BOOK JOE</a>
+  </div>
 
   <main>
 
@@ -943,20 +950,6 @@
 
   <!-- Shared JS -->
   <script src="js/main.js"></script>
-
-  <!-- Scroll reveal -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
 
 </body>
 </html>
