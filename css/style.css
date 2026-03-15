@@ -814,6 +814,24 @@ input::placeholder, textarea::placeholder { color: var(--text-muted); }
   margin: 0;
 }
 
+/* ── Photo Strip ─────────────────────────────────────── */
+.photo-strip {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  height: 400px;
+  gap: 4px;
+}
+
+@media (max-width: 767px) {
+  .photo-strip {
+    grid-template-columns: 1fr 1fr;
+    height: 500px;
+  }
+  .photo-strip-item--desktop {
+    display: none;
+  }
+}
+
 /* Footer mobile */
 @media (max-width: 767px) {
   .footer-inner {
