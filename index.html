@@ -235,7 +235,7 @@
   <!-- ═══ ABOUT TEASER ═══ -->
   <section class="section" id="about">
     <div class="container">
-      <div class="grid-2" style="align-items:center; gap:var(--space-2xl);">
+      <div class="grid-2" style="align-items:center; gap:4rem;">
         <!-- Image -->
         <div class="reveal" style="position:relative;">
           <!-- Offset frame -->
@@ -243,20 +243,18 @@
             position:absolute; top:-16px; left:-16px; right:16px; bottom:16px;
             border:1px solid rgba(0,245,255,0.18); pointer-events:none;
           " aria-hidden="true"></div>
-          <div class="img-hover-zoom">
+          <div class="img-hover-zoom" style="position:relative; overflow:hidden;">
             <img src="assets/images/headshot.webp" alt="Joe Coover with his 80s prop collection"
               style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 20%; border:1px solid rgba(255,45,120,0.2);">
-          </div>
-          <!-- Award badge -->
-          <div style="
-            position:absolute; bottom:-20px; right:-20px;
-            background:var(--magenta);
-            padding:14px 20px;
-            clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
-            box-shadow:var(--glow-magenta);
-          " aria-label="IBM National Championship winner">
-            <span style="font-family:var(--font-cta); font-size:0.72rem; letter-spacing:0.1em; color:#fff; display:block;">🏆 IBM NATIONAL CHAMPION</span>
-            <span style="font-size:0.62rem; color:rgba(255,255,255,0.75);">Close-Up · Most Unique · Most Technical</span>
+            <!-- Award badge overlaid on image -->
+            <div style="
+              position:absolute; bottom:0; left:0; right:0;
+              background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+              padding:2rem 1.25rem 1rem;
+            " aria-label="IBM National Championship winner">
+              <span style="font-family:var(--font-cta); font-size:0.78rem; letter-spacing:0.1em; color:#fff; display:block; text-shadow:0 1px 4px rgba(0,0,0,0.8);">🏆 IBM NATIONAL CHAMPION</span>
+              <span style="font-size:0.65rem; color:rgba(255,255,255,0.8); text-shadow:0 1px 4px rgba(0,0,0,0.8);">Close-Up · Most Unique · Most Technical</span>
+            </div>
           </div>
         </div>
         <!-- Text -->
