@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- face circle -->
+  <circle cx="32" cy="32" r="22" stroke="#FFE600" stroke-width="2" fill="#FFE600" fill-opacity="0.08"/>
+  <!-- eyes -->
+  <circle cx="24" cy="26" r="3" fill="#FFE600" fill-opacity="0.7"/>
+  <circle cx="40" cy="26" r="3" fill="#FFE600" fill-opacity="0.7"/>
+  <!-- laugh lines at eyes -->
+  <path d="M19 22 Q22 20 25 22" stroke="#FFE600" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M39 22 Q42 20 45 22" stroke="#FFE600" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- big smile -->
+  <path d="M20 36 Q32 50 44 36" stroke="#FFE600" stroke-width="2.2" stroke-linecap="round" fill="#FFE600" fill-opacity="0.15"/>
+  <!-- laugh lines at mouth -->
+  <path d="M16 34 Q18 38 16 42" stroke="#FFE600" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M48 34 Q46 38 48 42" stroke="#FFE600" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+  <!-- stars / energy marks -->
+  <line x1="10" y1="16" x2="14" y2="20" stroke="#FF2D78" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="14" y1="16" x2="10" y2="20" stroke="#FF2D78" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="50" y1="16" x2="54" y2="20" stroke="#FF2D78" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="54" y1="16" x2="50" y2="20" stroke="#FF2D78" stroke-width="1.4" stroke-linecap="round"/>
+</svg>
