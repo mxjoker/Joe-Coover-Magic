@@ -278,6 +278,11 @@ p  { font-size: clamp(0.95rem, 1.5vw, 1.1rem); }
   color: #fff;
 }
 
+.nav-cta-desktop {
+  display: none;
+}
+@media (min-width: 768px) { .nav-cta-desktop { display: inline-block; } }
+
 .nav-hamburger {
   display: flex;
   flex-direction: column;
@@ -712,6 +717,31 @@ input::placeholder, textarea::placeholder { color: var(--text-muted); }
     --glow-magenta: 0 0 10px rgba(255,45,120,0.4), 0 0 20px rgba(255,45,120,0.15);
     --glow-cyan:    0 0 10px rgba(0,245,255,0.4),  0 0 20px rgba(0,245,255,0.15);
   }
+
+  /* Stats bar — wrap to 2x2 on mobile */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-sm);
+  }
+  .stat-item { text-align: center; }
+
+  /* Hero bolt — hide on small screens so it doesn't overlap text */
+  .bolt-float { display: none; }
+
+  /* Hero CTA buttons — full width on small screens */
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { text-align: center; }
+
+  /* About section grid gap — reduce when stacked */
+  .about-grid-gap { gap: var(--space-md) !important; }
+
+  /* Video embed — add side padding so it doesn't run edge to edge */
+  .video-embed-container { padding: 0 var(--space-sm); }
+
+  /* Pricing box — reduce excessive padding */
+  .pricing-box { padding: var(--space-md) !important; }
 }
 /* ── Footer ─────────────────────────────────────────── */
 .site-footer {
